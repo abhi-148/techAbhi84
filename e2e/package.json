@@ -1,0 +1,7 @@
+{
+  "name": "techabhi-e2e",
+  "private": true,
+  "type": "module",
+  "description": "Optional real-browser check. Run: npm i && BASE=http://localhost:4000 SINK=http://127.0.0.1:4121 node browser-check.mjs (see the header of browser-check.mjs).",
+  "dependencies": { "puppeteer-core": "25.17.0", "@sparticuz/chromium": "153.0.0" }
+}

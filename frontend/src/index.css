@@ -1,0 +1,365 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   TechAbhi — Global Design System
+   Clean • Consistent • Responsive • Accessible
+   ========================================================= */
+
+:root {
+  font-family: "Inter Variable", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Brand */
+  --ta-brand: #1d4a94;
+  --ta-brand-hover: #163b78;
+  --ta-brand-soft: rgba(29, 74, 148, 0.12);
+  --ta-focus: #1d4a94;
+
+  /* Light theme tokens (the whole app is light; keep these in sync with Tailwind slate) */
+  --ta-bg: #f6f8fb;
+  --ta-surface: #ffffff;
+  --ta-surface-raised: #ffffff;
+  --ta-border: #e2e8f0;
+  --ta-text: #0b1b33;
+  --ta-muted: #53627a;
+  --ta-success: #059669;
+  --ta-warning: #d97706;
+  --ta-danger: #e11d48;
+
+  --ta-radius-sm: 8px;
+  --ta-radius-md: 12px;
+  --ta-radius: 16px;
+  --ta-radius-lg: 22px;
+  --ta-content-width: 1200px;
+
+  color: var(--ta-text);
+  background: var(--ta-bg);
+  color-scheme: light;
+}
+
+/* Predictable sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--ta-bg);
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    var(--ta-bg);
+  color: var(--ta-text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Inter Variable", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font-size: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 3px;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+}
+
+::selection {
+  background: rgba(98, 84, 232, 0.35);
+  color: #ffffff;
+}
+
+/* Accessible keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--ta-focus);
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Links and interactive controls */
+a,
+button,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+[role="button"] {
+  user-select: none;
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #34415b;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #526586;
+  background-clip: padding-box;
+}
+
+/* Form controls */
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  accent-color: var(--ta-brand);
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+::placeholder {
+  color: #7e8ca5;
+  opacity: 1;
+}
+
+select option {
+  background: var(--ta-surface);
+  color: var(--ta-text);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--ta-brand);
+}
+
+/* Remove default margins that often create uneven page spacing */
+figure,
+blockquote {
+  margin: 0;
+}
+
+/* Reusable glass surface */
+.ta-glass {
+  border: 1px solid var(--ta-border);
+  background: rgba(16, 23, 39, 0.82);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+/* Reusable surface and text helpers */
+.ta-surface {
+  border: 1px solid var(--ta-border);
+  border-radius: var(--ta-radius);
+  background: var(--ta-surface);
+}
+
+.ta-muted {
+  color: var(--ta-muted);
+}
+
+/* Subtle entrance animation */
+@keyframes ta-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ta-rise {
+  animation: ta-fade-up 380ms ease-out both;
+}
+
+/* Typing indicator */
+@keyframes ta-typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+.ta-dot {
+  animation: ta-typing 1.2s infinite ease-in-out;
+}
+
+/* Common responsive media behavior */
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* Keep app roots from accidentally shrinking or causing horizontal overflow */
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  isolation: isolate;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+  html {
+    scrollbar-gutter: auto;
+  }
+
+  body {
+    overflow-x: clip;
+  }
+}
+
+
+/* ---- additions: loading skeletons, touch targets, reduced-motion friendly shimmer ---- */
+.ta-skel { position: relative; overflow: hidden; background: #e6ebf2; border-radius: 10px; }
+.ta-skel::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, rgba(255,255,255,.65), transparent); animation: ta-shimmer 1.4s infinite; }
+@keyframes ta-shimmer { to { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) { .ta-skel::after { animation: none; } }
+.ta-line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ta-tap { min-height: 44px; }
